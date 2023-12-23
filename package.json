@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.13.0"
+    "discord-html-transcripts": "^3.2.0",
+    "discord.js": "^14.13.0",
+    "wokcommands": "^2.1.9"
   }
 }
