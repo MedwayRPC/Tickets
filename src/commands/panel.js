@@ -16,6 +16,7 @@ module.exports = {
     type: CommandType.SLASH,
     ownerOnly: true,
 
+
     callback: async ({
         interaction,
         client
