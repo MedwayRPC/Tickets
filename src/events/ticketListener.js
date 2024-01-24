@@ -121,6 +121,7 @@ module.exports = async (instance, message) => {
                 })
 
                 await channel.send(msg).then(channel.send(info))
+                await channel.send(`<@&1175906019478618204>`)
             })
 
         } // *END
@@ -181,6 +182,7 @@ module.exports = async (instance, message) => {
                 })
 
                 await channel.send(msg).then(channel.send(info))
+                await channel.send(`<@&1175906019478618204>`)
             })
 
         } // *END
@@ -241,6 +243,7 @@ module.exports = async (instance, message) => {
                 })
 
                 await channel.send(msg).then(channel.send(info))
+                await channel.send(`<@&1175906019478618204>`)
             })
 
         } // *END
@@ -301,6 +304,7 @@ module.exports = async (instance, message) => {
                 })
 
                 await channel.send(msg).then(channel.send(info))
+                await channel.send(`<@&1175906019478618204>`)
             })
 
         } // *END
