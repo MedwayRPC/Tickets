@@ -5,7 +5,10 @@ const {
     ButtonBuilder,
     ButtonStyle,
     ActionRowBuilder,
-    MessagePayload
+    MessagePayload,
+    ModalBuilder,
+    TextInputBuilder,
+    TextInputStyle
 } = require("discord.js");
 const {
     client
@@ -307,6 +310,27 @@ module.exports = async (instance, message) => {
             })
 
         } // *END
+
+        if (interaction.customId === 'interview-n') {
+
+            const interviewModal = new ModalBuilder()
+                .setCustomId('iv-modal')
+                .setTitle('New Interview')
+
+                const nameInput = new TextInputBuilder()
+                .setCustomId('idInput')
+                .setLabel('Discord ID of the interviewee')
+                .setStyle(TextInputStyle.Short)
+                .setRequired(true)
+
+                const row1 = new ActionRowBuilder().addComponents(nameInput);
+
+            interviewModal.addComponents(row1);
+
+            await interaction.showModal(interviewModal);
+
+
+        }
 
 
 

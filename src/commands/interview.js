@@ -22,7 +22,7 @@ module.exports = {
     }) => {
 
         const gensupButton = new ButtonBuilder()
-            .setCustomId('interview')
+            .setCustomId('interview-n')
             .setEmoji('📩')
             .setLabel('New Interview Ticket')
             .setStyle(ButtonStyle.Secondary)
@@ -37,7 +37,7 @@ module.exports = {
             .setColor('Blue')
             .setTitle('Interview Tickets')
             .setThumbnail(interaction.guild.iconURL())
-            .setDescription('>>> Please click here to open a ticket to setup an interview with a user. Once the ticket is open please run /add followed by the users discord ID')
+            .setDescription('>>> Please click here to open a ticket to setup an interview with a user.')
             .setFooter({
                 text: 'Ticket System'
             })
