@@ -29,10 +29,9 @@ module.exports = {
             .setStyle(ButtonStyle.Secondary)
 
         const serverReportButton = new ButtonBuilder()
-            .setCustomId('joinus')
-            .setEmoji('📩')
             .setLabel('Looking to Join')
-            .setStyle(ButtonStyle.Secondary)
+            .setStyle(ButtonStyle.Link)
+            .setURL('https://medwayrpc.uk')
 
         const userReportButton = new ButtonBuilder()
             .setCustomId('goldTicket')
@@ -42,7 +41,7 @@ module.exports = {
 
 
         const row1 = new ActionRowBuilder()
-            .addComponents(gensupButton, serverReportButton, userReportButton,)
+            .addComponents(gensupButton, userReportButton, serverReportButton)
 
 
 
