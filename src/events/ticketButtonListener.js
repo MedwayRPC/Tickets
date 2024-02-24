@@ -98,6 +98,8 @@ module.exports = async (interaction) => {
                     embeds: [success]
                 })
 
+                await interaction.channel.setName(`${interaction.user.tag}-doing`)
+
                 // await interaction.channel.setName(`${interaction.user.tag}-doing`).then(interaction.channel.send(logMsg))
                 await interaction.channel.send(logMsg)
             }
