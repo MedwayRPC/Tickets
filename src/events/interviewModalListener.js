@@ -9,8 +9,8 @@ const {
     ActionRowBuilder,
     ButtonStyle,
     EmbedBuilder,
-    
-    
+
+
 } = require("discord.js");
 module.exports = async (interaction) => {
 
@@ -20,28 +20,32 @@ module.exports = async (interaction) => {
         if (interaction.customId === 'iv-modal') {
 
             const interviewOpened = new EmbedBuilder()
-        .setColor('Aqua')
-        .setTitle('Interview')
-        .setDescription('>>> This ticket will be used for Human Resources to liase with applicants about their interview')
-        .setTimestamp()
-        .setThumbnail(interaction.guild.iconURL())
-        .setFooter({
-            text: 'Ticket System'
-        })
+                .setColor('Aqua')
+                .setTitle('Interview')
+                .setDescription('>>> This ticket will be used for Human Resources to liase with applicants about their interview')
+                .setTimestamp()
+                .setThumbnail(interaction.guild.iconURL())
+                .setFooter({
+                    text: 'Ticket System'
+                })
 
 
-    const ticketInfo = new EmbedBuilder()
-    .setTitle('Ticket Information')
-    .setDescription(`Ticket Owner: <@${interaction.user.id}> \`(${interaction.user.id})\``)
-    .setColor('Green')
-    .setTimestamp()
+            const ticketInfo = new EmbedBuilder()
+                .setTitle('Ticket Information')
+                .setDescription(`Ticket Owner: <@${interaction.user.id}> \`(${interaction.user.id})\``)
+                .setColor('Green')
+                .setTimestamp()
+
+
+            const uid = interaction.fields.getTextInputValue('idInput');
+
             
 
-                const uid = interaction.fields.getTextInputValue('idInput');
 
-                let channelName = `interview-${uid}`
+            let channelName = `interview-${uid}`
             let parent = '1176206837998174249'
 
+            try {
             let newTicket = await interaction.guild.channels.create({
                 name: channelName,
                 parent: parent,
@@ -96,12 +100,15 @@ module.exports = async (interaction) => {
                 })
 
                 await channel.send(msg).then(channel.send(info))
-                
+
+
+            })
+        } catch (err) {
+            interaction.reply({content: `An error occured: ${err} \n\n**Ensure that your input is a users ID**`, ephemeral: true})
 
         }
-    )}
-        
-        
+
+    } 
 
 
     })
